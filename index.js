@@ -1,7 +1,13 @@
 const express = require('express');
+const morgan = require('morgan');
 const app = express();
 
 app.use(express.json());
+app.use(morgan(':method :url :status :res[content-length] - :response-time ms :body'));
+
+morgan.token('body', (req, res) => {
+  JSON.stringify(req.body);
+});
 
 let data = [
   {
@@ -57,7 +63,6 @@ app.get('/info', (request, response) => {
 
 app.post('/api/v1/persons', (request, response) => {
   const body = request.body;
-  console.log(body);
 
   if (!body.name) {
     return response.status(400).json({
@@ -78,7 +83,7 @@ app.post('/api/v1/persons', (request, response) => {
   }
 
   const person = {
-    id: Math.random() * (100000 - 1) + 1,
+    id: Math.floor(Math.random() * (100000 - 1) + 1),
     name: body.name,
     number: body.number,
   };
