@@ -1,2 +1,4 @@
 node_modules
 *.rest
+mongo.js
+.env

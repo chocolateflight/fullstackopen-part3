@@ -2,4 +2,5 @@
 
 These are my solutions for Part 3 of the Fullstack Open Course by the University of Helsinki.
 
-Main Repo: [Link](https://github.com/chocolateflight/fullstackopen)
+Main Repo: [GitHub](https://github.com/chocolateflight/fullstackopen)
+Solution App: [Link](https://angry-hoodie-toad.cyclic.app/)
